@@ -153,7 +153,7 @@ Di seguito alcuni screenshot dell'applicazione:
 * [Express.Js]
 
 ##### Frontend
-* [Angular] 9
+* [Angular] 10
 * [AmCharts] 4
 * [SBAdmin] 2
 * [Bootstrap] 4
