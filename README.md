@@ -5,7 +5,7 @@ Dashboard Covid Italia è una Web Application realizzata in Javascript che conse
 ![Home](https://raw.githubusercontent.com/RiccardoRiggi/dashboard-covid-italia/master/screenshots/home.png)
 
 ## Database
-Viene utilizzato un database [MySql]. Nella relativa cartella è possibile trovare la struttura e i dati relativi ad alcune tabelle.
+Il progetto si appoggia ad un database [MySql]. Nella relativa cartella è possibile trovare la struttura e i dati relativi ad alcune tabelle.
 
 ---
 
