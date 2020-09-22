@@ -1,0 +1,14 @@
+#graficoNuoviPositiviPerRegione{
+    width: 100%;
+    height: 60vh; 
+}
+
+#graficoOspedalizzatiPerRegione{
+    width: 100%;
+    height: 40vh; 
+}
+
+#graficoDecedutiPerRegione{
+    width: 100%;
+    height: 40vh; 
+}

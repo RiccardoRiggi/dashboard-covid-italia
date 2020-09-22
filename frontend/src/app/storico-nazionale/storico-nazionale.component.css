@@ -1,0 +1,34 @@
+#graficoStoricoContagiatiNazionale {
+    width: 100%;
+    height: 40vh;
+}
+
+#graficoStoricoTerapiaIntensivaNazionale{
+    width: 100%;
+    height: 40vh;
+}
+
+#graficoStoricoOspedalizzatiNazionale{
+    width: 100%;
+    height: 40vh;
+}
+
+#graficoStoricoIsolamentoDomiciliareNazionale{
+    width: 100%;
+    height: 40vh;
+}
+
+#graficoStoricoGuaritiNazionale{
+    width: 100%;
+    height: 40vh;
+}
+
+#graficoStoricoDecessiNazionale{
+    width: 100%;
+    height: 40vh;
+}
+
+#graficoStoricoTamponiNazionale{
+    width: 100%;
+    height: 40vh;
+}

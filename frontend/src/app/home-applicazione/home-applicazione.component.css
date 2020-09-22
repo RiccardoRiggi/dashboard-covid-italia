@@ -1,0 +1,14 @@
+#graficoStoricoContagiatiNazionale {
+    width: 100%;
+    height: 40vh;
+}
+
+#graficoDifferenzaTamponiNegativiTamponiPositivi{
+    width: 100%;
+    height: 20vh; 
+}
+
+#graficoNuoviPositiviPerRegione{
+    width: 100%;
+    height: 22vh; 
+}

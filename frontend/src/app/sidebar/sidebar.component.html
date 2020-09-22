@@ -1,0 +1,76 @@
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+  <!-- Sidebar - Brand -->
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" [routerLink]="['/']" routerLinkActive="router-link-active" >
+    <div class="sidebar-brand-icon ">
+      <i class="fas fa-shield-virus"></i>
+    </div>
+    <div class="sidebar-brand-text mx-3">Covid <sup>19</sup></div>
+  </a>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/" routerLinkActive="active">
+      <i class="fas fa-fw fa-home"></i>
+      <span>Homepage</span></a>
+  </li>
+
+
+
+  <!-- Nav Item - Utilities Collapse Menu -->
+  <li class="nav-item">
+    <a class="nav-link collapsed"  routerLink="/nazione" routerLinkActive="active" data-toggle="collapse" data-target="#collapseNazione" aria-expanded="true"
+      aria-controls="collapseNazione">
+      <i class="far fa-chart-bar"></i>
+      <span>Dati nazionali</span>
+    </a>
+    <div id="collapseNazione" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <a class="collapse-item" [routerLink]="['/storico-nazionale']" routerLinkActive="router-link-active" >Grafici storici</a>
+        <a class="collapse-item"[routerLink]="['/giorno-specifico-nazione/']" routerLinkActive="router-link-active">Dati giornalieri</a>
+      </div>
+    </div>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" routerLink="/regione" routerLinkActive="active" data-toggle="collapse" data-target="#collapseRegione" aria-expanded="true"
+      aria-controls="collapseRegione">
+      <i class="far fa-chart-bar"></i>
+      <span>Dati regionali</span>
+    </a>
+    <div id="collapseRegione" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <a class="collapse-item" [routerLink]="['/scelta-regione/storico-regionale']" routerLinkActive="router-link-active" >Dati Storici</a>
+        <a class="collapse-item"[routerLink]="['/scelta-regione/giorno-specifico-regione']" routerLinkActive="router-link-active">Giorno Specifico</a>
+      </div>
+    </div>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" routerLink="/provincia" routerLinkActive="active" data-toggle="collapse" data-target="#collapseProvincia" aria-expanded="true"
+      aria-controls="collapseProvincia">
+      <i class="far fa-chart-bar"></i>
+      <span>Dati provinciali</span>
+    </a>
+    <div id="collapseProvincia" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <a class="collapse-item" [routerLink]="['/scelta-provincia/storico-provinciale']" routerLinkActive="router-link-active" >Dati Storici</a>
+        <a class="collapse-item"[routerLink]="['/scelta-provincia/giorno-specifico-provincia']" routerLinkActive="router-link-active">Giorno Specifico</a>
+      </div>
+    </div>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/crediti" routerLinkActive="active">
+      <i class="fas fa-fw fa-user-tie"></i>
+      <span>Crediti</span></a>
+  </li>
+
+  
+
+</ul>
+<!-- End of Sidebar -->

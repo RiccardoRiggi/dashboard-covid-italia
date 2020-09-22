@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dati giornalieri nazionali</h1>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary"></h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Ospedalizzati</th>
+                                    <th>Isolamento</th>
+                                    <th>Positivi</th>
+                                    <th>Guariti</th>
+                                    <th>Deceduti</th>
+                                    <th>Tamponi</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr *ngFor="let riga of tabellaNazionale">
+                                    <td>{{riga.dataFormattata}}</td>
+                                    <td>{{riga.totale_ospedalizzati}} (TI: {{riga.terapia_intensiva}})</td>
+                                    <td>{{riga.isolamento_domiciliare}}</td>
+                                    <td>{{riga.totale_positivi}}</td>
+                                    <td>{{riga.dimessi_guariti}}</td>
+                                    <td>{{riga.deceduti}}</td>
+                                    <td>{{riga.tamponi}}</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Ospedalizzati</th>
+                                    <th>Isolamento</th>
+                                    <th>Positivi</th>
+                                    <th>Guariti</th>
+                                    <th>Deceduti</th>
+                                    <th>Tamponi</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
