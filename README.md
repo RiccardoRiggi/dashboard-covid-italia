@@ -45,50 +45,50 @@ http://localhost:3000/nazione/dettaglio/2020-09-16 <br>
 http://localhost:3000/nazione/dettaglioStorico <br>
 
 ##### API regioni
-http://localhost:3000/regioni/
-http://localhost:3000/regioni/7/last
-http://localhost:3000/regioni/7/storico-ricoverati-con-sintomi
-http://localhost:3000/regioni/7/storico-terapia-intensiva
-http://localhost:3000/regioni/7/storico-totale-ospedalizzati
-http://localhost:3000/regioni/7/storico-isolamento-domiciliare
-http://localhost:3000/regioni/7/storico-totale-positivi
-http://localhost:3000/regioni/7/storico-variazione-totale-positivi
-http://localhost:3000/regioni/7/storico-nuovi-positivi
-http://localhost:3000/regioni/7/storico-dimessi-guariti
-http://localhost:3000/regioni/7/storico-deceduti
-http://localhost:3000/regioni/7/storico-casi-da-sospetto-diagnostico
-http://localhost:3000/regioni/7/storico-casi-da-screening
-http://localhost:3000/regioni/7/storico-totale-casi
-http://localhost:3000/regioni/7/storico-tamponi
-http://localhost:3000/regioni/7/storico-casi-testati
-http://localhost:3000/regioni/7/dettaglio/2020-09-16
-http://localhost:3000/regioni/7/dettaglioStorico
-http://localhost:3000/regioni/nuoviPositiviPerRegione
-http://localhost:3000/regioni/totaleDecedutiPerRegione
-http://localhost:3000/regioni/totaleOspedalizzatiPerRegione
+http://localhost:3000/regioni/ <br>
+http://localhost:3000/regioni/7/last <br>
+http://localhost:3000/regioni/7/storico-ricoverati-con-sintomi <br>
+http://localhost:3000/regioni/7/storico-terapia-intensiva <br>
+http://localhost:3000/regioni/7/storico-totale-ospedalizzati <br>
+http://localhost:3000/regioni/7/storico-isolamento-domiciliare <br>
+http://localhost:3000/regioni/7/storico-totale-positivi <br>
+http://localhost:3000/regioni/7/storico-variazione-totale-positivi <br>
+http://localhost:3000/regioni/7/storico-nuovi-positivi <br>
+http://localhost:3000/regioni/7/storico-dimessi-guariti <br>
+http://localhost:3000/regioni/7/storico-deceduti <br>
+http://localhost:3000/regioni/7/storico-casi-da-sospetto-diagnostico <br>
+http://localhost:3000/regioni/7/storico-casi-da-screening <br>
+http://localhost:3000/regioni/7/storico-totale-casi <br>
+http://localhost:3000/regioni/7/storico-tamponi <br>
+http://localhost:3000/regioni/7/storico-casi-testati <br>
+http://localhost:3000/regioni/7/dettaglio/2020-09-16 <br>
+http://localhost:3000/regioni/7/dettaglioStorico <br>
+http://localhost:3000/regioni/nuoviPositiviPerRegione <br>
+http://localhost:3000/regioni/totaleDecedutiPerRegione <br>
+http://localhost:3000/regioni/totaleOspedalizzatiPerRegione <br>
 
 ##### API province
-http://localhost:3000/province
-http://localhost:3000/province/7/10/last
-http://localhost:3000/province/7/10/storico-totale-casi
-http://localhost:3000/province/7/10/dettaglio/2020-09-17
-http://localhost:3000/province/7/10/dettaglioStorico
+http://localhost:3000/province <br>
+http://localhost:3000/province/7/10/last <br>
+http://localhost:3000/province/7/10/storico-totale-casi <br>
+http://localhost:3000/province/7/10/dettaglio/2020-09-17 <br>
+http://localhost:3000/province/7/10/dettaglioStorico <br>
 
 ##### API menu
-http://localhost:3000/menu/elencoRegioni
-http://localhost:3000/menu/elencoRegioni/7
-http://localhost:3000/menu/elencoProvince/
-http://localhost:3000/menu/elencoProvince/7
-http://localhost:3000/menu/elencoVociMenu
-http://localhost:3000/menu/elencoVociMenuPadre
-http://localhost:3000/menu/elencoVociMenuFiglie
-http://localhost:3000/menu/elencoVociMenuFiglie/2
+http://localhost:3000/menu/elencoRegioni <br>
+http://localhost:3000/menu/elencoRegioni/7 <br>
+http://localhost:3000/menu/elencoProvince/ <br>
+http://localhost:3000/menu/elencoProvince/7 <br>
+http://localhost:3000/menu/elencoVociMenu <br>
+http://localhost:3000/menu/elencoVociMenuPadre <br>
+http://localhost:3000/menu/elencoVociMenuFiglie <br>
+http://localhost:3000/menu/elencoVociMenuFiglie/2 <br>
 
 ##### API di sincronizzazione del database
-http://localhost:3000/sincronizza-base-dati/
-http://localhost:3000/sincronizza-base-dati/nazione
-http://localhost:3000/sincronizza-base-dati/regioni
-http://localhost:3000/sincronizza-base-dati/province
+http://localhost:3000/sincronizza-base-dati/ <br>
+http://localhost:3000/sincronizza-base-dati/nazione <br>
+http://localhost:3000/sincronizza-base-dati/regioni <br>
+http://localhost:3000/sincronizza-base-dati/province <br>
 
 ---
 
