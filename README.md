@@ -26,23 +26,23 @@ $ npm start
 ```
 
 ##### API nazione
-http://localhost:3000/nazione/last/
-http://localhost:3000/nazione/storico-ricoverati-con-sintomi
-http://localhost:3000/nazione/storico-terapia-intensiva
-http://localhost:3000/nazione/storico-totale-ospedalizzati
-http://localhost:3000/nazione/storico-isolamento-domiciliare
-http://localhost:3000/nazione/storico-totale-positivi
-http://localhost:3000/nazione/storico-variazione-totale-positivi
-http://localhost:3000/nazione/storico-nuovi-positivi
-http://localhost:3000/nazione/storico-dimessi-guariti
-http://localhost:3000/nazione/storico-deceduti
-http://localhost:3000/nazione/storico-casi-da-sospetto-diagnostico
-http://localhost:3000/nazione/storico-casi-da-screening
-http://localhost:3000/nazione/storico-totale-casi
-http://localhost:3000/nazione/storico-tamponi
-http://localhost:3000/nazione/storico-casi-testati
-http://localhost:3000/nazione/dettaglio/2020-09-16
-http://localhost:3000/nazione/dettaglioStorico
+http://localhost:3000/nazione/last/ <br>
+http://localhost:3000/nazione/storico-ricoverati-con-sintomi <br>
+http://localhost:3000/nazione/storico-terapia-intensiva <br>
+http://localhost:3000/nazione/storico-totale-ospedalizzati <br>
+http://localhost:3000/nazione/storico-isolamento-domiciliare <br>
+http://localhost:3000/nazione/storico-totale-positivi <br>
+http://localhost:3000/nazione/storico-variazione-totale-positivi <br>
+http://localhost:3000/nazione/storico-nuovi-positivi <br>
+http://localhost:3000/nazione/storico-dimessi-guariti <br>
+http://localhost:3000/nazione/storico-deceduti <br>
+http://localhost:3000/nazione/storico-casi-da-sospetto-diagnostico <br>
+http://localhost:3000/nazione/storico-casi-da-screening <br>
+http://localhost:3000/nazione/storico-totale-casi <br>
+http://localhost:3000/nazione/storico-tamponi <br>
+http://localhost:3000/nazione/storico-casi-testati <br>
+http://localhost:3000/nazione/dettaglio/2020-09-16 <br>
+http://localhost:3000/nazione/dettaglioStorico <br>
 
 ##### API regioni
 http://localhost:3000/regioni/
