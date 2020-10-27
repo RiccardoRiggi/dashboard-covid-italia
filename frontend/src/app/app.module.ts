@@ -22,6 +22,7 @@ import { GiornoSpecificoProvinciaComponent } from './giorno-specifico-provincia/
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { SceltaRegioneComponent } from './scelta-regione/scelta-regione.component';
 import { SceltaProvinciaComponent } from './scelta-provincia/scelta-provincia.component';
+import { IndicatoriAggiuntiviRegioneComponent } from './indicatori-aggiuntivi-regione/indicatori-aggiuntivi-regione.component';
 
 const routes: Routes = [
   { path: '', component: HomeApplicazioneComponent},
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'giorno-specifico-nazione', component: GiornoSpecificoNazioneComponent},
   { path: 'giorno-specifico-regione/:codiceRegione', component: GiornoSpecificoRegioneComponent},  //CODICE 2
   { path: 'giorno-specifico-provincia/:codiceRegione/:codiceProvincia', component: GiornoSpecificoProvinciaComponent},  //CODICE 2
+  { path: 'indicatori-aggiuntivi/:codiceRegione', component: IndicatoriAggiuntiviRegioneComponent},  //CODICE 3
   { path: 'scelta-regione/:tipoScelta', component: SceltaRegioneComponent},
   { path: 'scelta-provincia/:tipoScelta', component: SceltaProvinciaComponent},
   { path: '**', component: NotFoundPageComponent },
@@ -60,7 +62,8 @@ const routes: Routes = [
     GiornoSpecificoProvinciaComponent,
     NotFoundPageComponent,
     SceltaRegioneComponent,
-    SceltaProvinciaComponent
+    SceltaProvinciaComponent,
+    IndicatoriAggiuntiviRegioneComponent
   ],
   imports: [
     BrowserModule,

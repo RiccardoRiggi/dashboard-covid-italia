@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Set 22, 2020 alle 09:51
+-- Creato il: Ott 27, 2020 alle 23:03
 -- Versione del server: 10.1.37-MariaDB
 -- Versione PHP: 7.2.12
 
@@ -239,35 +239,36 @@ CREATE TABLE `regioni` (
   `codice_regione` int(11) NOT NULL,
   `denominazione_regione` varchar(512) DEFAULT NULL,
   `lat` double DEFAULT NULL,
-  `long` double DEFAULT NULL
+  `long` double DEFAULT NULL,
+  `popolazione` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `regioni`
 --
 
-INSERT INTO `regioni` (`codice_regione`, `denominazione_regione`, `lat`, `long`) VALUES
-(1, 'Piemonte', 45.0732745, 7.680687483),
-(2, 'Valle d\'Aosta', 45.73750286, 7.320149366),
-(3, 'Lombardia', 45.46679409, 9.190347404),
-(5, 'Veneto', 45.43490485, 12.33845213),
-(6, 'Friuli Venezia Giulia', 45.6494354, 13.76813649),
-(7, 'Liguria', 44.41149315, 8.9326992),
-(8, 'Emilia-Romagna', 44.49436681, 11.3417208),
-(9, 'Toscana', 43.76923077, 11.25588885),
-(10, 'Umbria', 43.10675841, 12.38824698),
-(11, 'Marche', 43.61675973, 13.5188753),
-(12, 'Lazio', 41.89277044, 12.48366722),
-(13, 'Abruzzo', 42.35122196, 13.39843823),
-(14, 'Molise', 41.55774754, 14.65916051),
-(15, 'Campania', 40.83956555, 14.25084984),
-(16, 'Puglia', 41.12559576, 16.86736689),
-(17, 'Basilicata', 40.63947052, 15.80514834),
-(18, 'Calabria', 38.90597598, 16.59440194),
-(19, 'Sicilia', 38.11569725, 13.3623567),
-(20, 'Sardegna', 39.21531192, 9.110616306),
-(21, 'P.A. Bolzano', 46.49933453, 11.35662422),
-(22, 'P.A. Trento', 46.06893511, 11.12123097);
+INSERT INTO `regioni` (`codice_regione`, `denominazione_regione`, `lat`, `long`, `popolazione`) VALUES
+(1, 'Piemonte', 45.0732745, 7.680687483, 4341375),
+(2, 'Valle d\'Aosta', 45.73750286, 7.320149366, 125501),
+(3, 'Lombardia', 45.46679409, 9.190347404, 10103969),
+(5, 'Veneto', 45.43490485, 12.33845213, 4907704),
+(6, 'Friuli Venezia Giulia', 45.6494354, 13.76813649, 1211357),
+(7, 'Liguria', 44.41149315, 8.9326992, 1543127),
+(8, 'Emilia-Romagna', 44.49436681, 11.3417208, 4467118),
+(9, 'Toscana', 43.76923077, 11.25588885, 3722729),
+(10, 'Umbria', 43.10675841, 12.38824698, 880285),
+(11, 'Marche', 43.61675973, 13.5188753, 1518400),
+(12, 'Lazio', 41.89277044, 12.48366722, 5865544),
+(13, 'Abruzzo', 42.35122196, 13.39843823, 1305770),
+(14, 'Molise', 41.55774754, 14.65916051, 302265),
+(15, 'Campania', 40.83956555, 14.25084984, 5785861),
+(16, 'Puglia', 41.12559576, 16.86736689, 4008296),
+(17, 'Basilicata', 40.63947052, 15.80514834, 556934),
+(18, 'Calabria', 38.90597598, 16.59440194, 1924701),
+(19, 'Sicilia', 38.11569725, 13.3623567, 4968410),
+(20, 'Sardegna', 39.21531192, 9.110616306, 1630474),
+(21, 'P.A. Bolzano', 46.49933453, 11.35662422, 106441),
+(22, 'P.A. Trento', 46.06893511, 11.12123097, 520891);
 
 -- --------------------------------------------------------
 

@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/elencoRegioni', (req, res) => {
-    let sql = 'SELECT codice_regione, denominazione_regione FROM regioni WHERE 1 ORDER BY denominazione_regione';
+    let sql = 'SELECT codice_regione, denominazione_regione, popolazione FROM regioni WHERE 1 ORDER BY denominazione_regione';
     let query = con.query(sql, (err, results) => {
         try {
             if (err) throw err;
@@ -32,7 +32,7 @@ router.get('/elencoRegioni', (req, res) => {
 });
 
 router.get('/elencoRegioni/:codiceRegione', (req, res) => {
-    let sql = 'SELECT codice_regione, denominazione_regione FROM regioni WHERE 1 AND codice_regione = ' + req.params.codiceRegione;
+    let sql = 'SELECT codice_regione, denominazione_regione, popolazione FROM regioni WHERE 1 AND codice_regione = ' + req.params.codiceRegione;
     let query = con.query(sql, (err, results) => {
         try {
             if (err) throw err;
