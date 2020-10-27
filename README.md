@@ -117,7 +117,7 @@ Di seguito alcuni screenshot dell'applicazione:
 ![Ultimi dati regionali](https://raw.githubusercontent.com/RiccardoRiggi/dashboard-covid-italia/master/screenshots/ultimi-dati-regionali.png)
 
 ##### Indicatori aggiuntivi regionali
-![Indicatori aggiuntivi regionali](https://raw.githubusercontent.com/RiccardoRiggi/dashboard-covid-italia/master/screenshots/indicatori-aggiuntivi-regione.png)
+![Indicatori aggiuntivi regionali](https://raw.githubusercontent.com/RiccardoRiggi/dashboard-covid-italia/master/screenshots/indicatori-regione.png)
 
 ##### Scelta regione
 ![Scelta regione](https://raw.githubusercontent.com/RiccardoRiggi/dashboard-covid-italia/master/screenshots/scelta-regione.png)
