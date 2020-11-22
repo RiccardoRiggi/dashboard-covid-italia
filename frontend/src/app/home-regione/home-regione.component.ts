@@ -14,6 +14,8 @@ export class HomeRegioneComponent implements OnInit {
   elencoNuoviPositiviPerRegione: any;
   ospedalizzatiPerRegione: any;
   decedutiPerRegione: any[];
+  ultimiValori: any;
+  ultimaData: any;
 
   constructor(httpDue: HttpClient) { 
     let obsTre = httpDue.get('http://localhost:3000/regioni/nuoviPositiviPerRegione', { responseType: 'text' });
@@ -22,6 +24,8 @@ export class HomeRegioneComponent implements OnInit {
     obsTre.subscribe((ResponseDue) => this.mettiJSONDue((ResponseDue)));
     obsTre = httpDue.get('http://localhost:3000/regioni/totaleDecedutiPerRegione', { responseType: 'text' });
     obsTre.subscribe((ResponseDue) => this.mettiJSONUno((ResponseDue)));
+    obsTre = httpDue.get('http://localhost:3000/regioni/7/last', { responseType: 'text' });
+    obsTre.subscribe((ResponseDue) => this.mettiJSONQuattro((ResponseDue)));
   }
 
   ngOnInit(): void {
@@ -44,6 +48,12 @@ export class HomeRegioneComponent implements OnInit {
     a = JSON.parse(a);
     this.decedutiPerRegione = a.response;
     this.creaGraficoDecedutiPerRegione();
+  }
+
+  mettiJSONQuattro(a) {
+    a = JSON.parse(a);
+    this.ultimiValori = a.response[0];
+    this.ultimaData=this.ultimiValori.data;
   }
 
   creaGraficoNuoviPositiviPerRegione() {

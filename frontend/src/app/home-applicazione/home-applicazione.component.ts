@@ -18,6 +18,7 @@ export class HomeApplicazioneComponent {
   ultimiValori;
   totalePositivi;
   elencoNuoviPositiviPerRegione;
+  ultimaData: any;
 
   constructor(http: HttpClient, private httpDue: HttpClient) {
 
@@ -41,6 +42,7 @@ export class HomeApplicazioneComponent {
   mettiJSONDue(a) {
     a = JSON.parse(a);
     this.ultimiValori = a.response[0];
+    this.ultimaData=this.ultimiValori.data;
     this.creaGraficoDifferenzaTamponiNegativiTamponiPositivi();
 
   }

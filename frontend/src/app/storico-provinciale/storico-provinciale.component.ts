@@ -16,6 +16,7 @@ export class StoricoProvincialeComponent implements OnInit {
   codiceRegione: any;
   graficoStoricoContagiatiNazionale: any;
   nomeProvincia: any;
+  ultimaData: any;
 
   constructor(http: HttpClient,private route: ActivatedRoute) { 
     this.codiceRegione = this.route.snapshot.paramMap.get("codiceRegione");
@@ -34,6 +35,7 @@ export class StoricoProvincialeComponent implements OnInit {
   mettiJSON(a) {
     a = JSON.parse(a);
     this.graficoStoricoContagiatiNazionale = a.response;
+    this.ultimaData=this.graficoStoricoContagiatiNazionale[this.graficoStoricoContagiatiNazionale.length-1].giorno;
     this.creaGraficoStoricoContagiatiProvinciale();
   }
   creaGraficoStoricoContagiatiProvinciale() {

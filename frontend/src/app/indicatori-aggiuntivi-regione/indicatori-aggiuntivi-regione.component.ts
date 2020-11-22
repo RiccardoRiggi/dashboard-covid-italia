@@ -15,6 +15,7 @@ export class IndicatoriAggiuntiviRegioneComponent implements OnInit {
   codiceRegione: string;
   ultimiValori: any;
   regione: any;
+  ultimaData: any;
 
   constructor(http: HttpClient,private route: ActivatedRoute) { 
     this.codiceRegione = this.route.snapshot.paramMap.get("codiceRegione");
@@ -27,6 +28,7 @@ export class IndicatoriAggiuntiviRegioneComponent implements OnInit {
   mettiJSONDue(a) {
     a = JSON.parse(a);
     this.ultimiValori = a.response[0];
+    this.ultimaData=this.ultimiValori.data;
     this.creaGraficoDifferenzaTamponiNegativiTamponiPositivi();
     this.creaGraficoPopolazione();
 

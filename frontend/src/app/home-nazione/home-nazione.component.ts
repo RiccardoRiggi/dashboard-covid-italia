@@ -4,6 +4,7 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4lang_it_It from "@amcharts/amcharts4/lang/it_IT";
+import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'app-home-nazione',
@@ -13,6 +14,7 @@ import am4lang_it_It from "@amcharts/amcharts4/lang/it_IT";
 export class HomeNazioneComponent implements OnInit {
   ultimiValori: any;
   elencoNuoviPositiviPerRegione: any[];
+  ultimaData: string;
 
   constructor(httpDue: HttpClient) { 
     let obsDue = httpDue.get('http://localhost:3000/nazione/last/', { responseType: 'text' });
@@ -25,6 +27,8 @@ export class HomeNazioneComponent implements OnInit {
   mettiJSONDue(a) {
     a = JSON.parse(a);
     this.ultimiValori = a.response[0];
+    //this.ultimaData = this.datepipe.transform(this.ultimiValori.data,'yyyy-MM-dd');
+    this.ultimaData=this.ultimiValori.data;
   }
 
   mettiJSONTre(a) {

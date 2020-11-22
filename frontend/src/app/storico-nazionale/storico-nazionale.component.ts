@@ -18,6 +18,7 @@ export class StoricoNazionaleComponent {
   graficoStoricoGuaritiNazionale: any[];
   graficoStoricoDecessiNazionale: any[];
   graficoStoricoTamponiNazionale: any[];
+  ultimaData: any;
 
   constructor(http: HttpClient) {
     let obs = http.get('http://localhost:3000/nazione/storico-totale-casi', { responseType: 'text' });
@@ -40,6 +41,7 @@ export class StoricoNazionaleComponent {
   mettiJSON(a) {
     a = JSON.parse(a);
     this.graficoStoricoContagiatiNazionale = a.response;
+    this.ultimaData=this.graficoStoricoContagiatiNazionale[this.graficoStoricoContagiatiNazionale.length-1].giorno;
     this.creaGraficoStoricoContagiatiNazionale();
   }
 

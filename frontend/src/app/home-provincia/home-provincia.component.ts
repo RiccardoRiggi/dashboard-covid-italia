@@ -11,10 +11,20 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 })
 export class HomeProvinciaComponent implements OnInit {
   elencoCasiPerProvincia: any;
+  ultimiValori: any;
+  ultimaData: any;
 
   constructor(http: HttpClient) {
     let obsTre = http.get('http://localhost:3000/province/storico-totale-casi', { responseType: 'text' });
     obsTre.subscribe((ResponseDue) => this.mettiJSONTre((ResponseDue)));
+    obsTre = http.get('http://localhost:3000/province/7/10/last', { responseType: 'text' });
+    obsTre.subscribe((ResponseDue) => this.mettiJSONQuattro((ResponseDue)));
+  }
+
+  mettiJSONQuattro(a) {
+    a = JSON.parse(a);
+    this.ultimiValori = a.response[0];
+    this.ultimaData=this.ultimiValori.data;
   }
 
   mettiJSONTre(a) {
