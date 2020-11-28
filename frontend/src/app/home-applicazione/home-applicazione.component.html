@@ -14,7 +14,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Contagiati</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ultimiValori.totale_positivi}}
-                                (+{{ultimiValori.variazione_totale_positivi}})</div>
+                                ({{ultimiValori.variazione_totale_positivi > 0 ? '+' : ''}}{{ultimiValori.variazione_totale_positivi}})</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-head-side-virus fa-2x text-gray-300"></i>
@@ -31,7 +31,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Deceduti</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ultimiValori.deceduti}}
-                                (+{{ultimiValori.differenza_deceduti}})</div>
+                                ({{ultimiValori.differenza_deceduti > 0 ? '+' : ''}}{{ultimiValori.differenza_deceduti}})</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-cross fa-2x text-gray-300"></i>
@@ -48,7 +48,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Guariti</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ultimiValori.dimessi_guariti}}
-                                (+{{ultimiValori.differenza_dimessi_guariti}})</div>
+                                ({{ultimiValori.differenza_dimessi_guariti > 0 ? '+' : ''}}{{ultimiValori.differenza_dimessi_guariti}})</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-virus-slash fa-2x text-gray-300"></i>
@@ -65,7 +65,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Totale</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ultimiValori.totale_casi}}
-                                (+{{ultimiValori.differenza_totale_casi}})</div>
+                                ({{ultimiValori.differenza_totale_casi > 0 ? '+' : ''}}{{ultimiValori.differenza_totale_casi}})</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-viruses fa-2x text-gray-300"></i>
