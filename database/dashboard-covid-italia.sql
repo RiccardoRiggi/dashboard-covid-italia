@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Ott 27, 2020 alle 23:03
+-- Creato il: Dic 27, 2020 alle 17:31
 -- Versione del server: 10.1.37-MariaDB
 -- Versione PHP: 7.2.12
 
@@ -293,7 +293,10 @@ CREATE TABLE `storico_nazionale` (
   `totale_casi` int(11) DEFAULT NULL,
   `tamponi` int(11) DEFAULT NULL,
   `casi_testati` int(11) DEFAULT NULL,
-  `note` text
+  `note` text,
+  `ingressi_terapia_intensiva` int(10) NOT NULL,
+  `note_test` varchar(6500) NOT NULL,
+  `note_casi` varchar(6500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -343,7 +346,10 @@ CREATE TABLE `storico_regioni` (
   `totale_casi` int(11) DEFAULT NULL,
   `tamponi` int(11) DEFAULT NULL,
   `casi_testati` int(11) DEFAULT NULL,
-  `note` text
+  `note` text,
+  `ingressi_terapia_intensiva` int(10) NOT NULL,
+  `note_test` varchar(6500) NOT NULL,
+  `note_casi` varchar(6500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
