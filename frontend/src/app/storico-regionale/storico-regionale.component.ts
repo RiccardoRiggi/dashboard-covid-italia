@@ -24,6 +24,7 @@ export class StoricoRegionaleComponent implements OnInit {
   graficoStoricoTamponiNazionale;
   nomeRegione: any;
   ultimaData: any;
+  graficoStoricoRapportoTamponiNazionale: any;
 
   constructor(http: HttpClient,private route: ActivatedRoute) { 
     this.codiceRegione = this.route.snapshot.paramMap.get("codiceRegione");
@@ -41,6 +42,8 @@ export class StoricoRegionaleComponent implements OnInit {
     obs.subscribe((Response) => this.mettiJSONDecessi(Response));
     obs = http.get('http://localhost:3000/regioni/'+this.codiceRegione+'/storico-tamponi', { responseType: 'text' });
     obs.subscribe((Response) => this.mettiJSONTamponi(Response));
+    obs = http.get('http://localhost:3000/regioni/'+this.codiceRegione+'/storico-rapporto-tamponi-positivi', { responseType: 'text' });
+    obs.subscribe((Response) => this.mettiJSONRapportoTamponi(Response));
     obs = http.get('http://localhost:3000/menu/elencoRegioni/'+this.codiceRegione, { responseType: 'text' });
     obs.subscribe((Response) => this.mettiJSONTitolo(Response));
   }
@@ -93,6 +96,12 @@ export class StoricoRegionaleComponent implements OnInit {
     this.creaGraficoStoricoTamponiNazionale();
   }
 
+  mettiJSONRapportoTamponi(a) {
+    a = JSON.parse(a);
+    this.graficoStoricoRapportoTamponiNazionale = a.response;
+    this.creaGraficoStoricoRapportoTamponiNazionale();
+  }
+
   creaGraficoStoricoContagiatiNazionale() {
 
     am4core.useTheme(am4themes_animated);
@@ -105,6 +114,7 @@ export class StoricoRegionaleComponent implements OnInit {
     dateAxis.stroke = am4core.color("#5a5c69");
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.min=0; //VALORE MINIMO DA METTERE SU ASSE Y
     let series = chart.series.push(new am4charts.LineSeries());
     series.dataFields.valueY = "differenza";
     series.dataFields.dateX = "giorno";
@@ -139,6 +149,7 @@ export class StoricoRegionaleComponent implements OnInit {
     dateAxis.stroke = am4core.color("#5a5c69");
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.min=0; //VALORE MINIMO DA METTERE SU ASSE Y
     let series = chart.series.push(new am4charts.LineSeries());
     series.dataFields.valueY = "valoreTotale";
     series.dataFields.dateX = "giorno";
@@ -173,6 +184,7 @@ export class StoricoRegionaleComponent implements OnInit {
     dateAxis.stroke = am4core.color("#5a5c69");
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.min=0; //VALORE MINIMO DA METTERE SU ASSE Y
     let series = chart.series.push(new am4charts.LineSeries());
     series.dataFields.valueY = "valoreTotale";
     series.dataFields.dateX = "giorno";
@@ -207,6 +219,7 @@ export class StoricoRegionaleComponent implements OnInit {
     dateAxis.stroke = am4core.color("#5a5c69");
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.min=0; //VALORE MINIMO DA METTERE SU ASSE Y
     let series = chart.series.push(new am4charts.LineSeries());
     series.dataFields.valueY = "valoreTotale";
     series.dataFields.dateX = "giorno";
@@ -241,6 +254,7 @@ export class StoricoRegionaleComponent implements OnInit {
     dateAxis.stroke = am4core.color("#5a5c69");
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.min=0; //VALORE MINIMO DA METTERE SU ASSE Y
     let series = chart.series.push(new am4charts.LineSeries());
     series.dataFields.valueY = "differenza";
     series.dataFields.dateX = "giorno";
@@ -275,6 +289,7 @@ export class StoricoRegionaleComponent implements OnInit {
     dateAxis.stroke = am4core.color("#5a5c69");
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.min=0; //VALORE MINIMO DA METTERE SU ASSE Y
     let series = chart.series.push(new am4charts.LineSeries());
     series.dataFields.valueY = "differenza";
     series.dataFields.dateX = "giorno";
@@ -309,6 +324,44 @@ export class StoricoRegionaleComponent implements OnInit {
     dateAxis.stroke = am4core.color("#5a5c69");
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.min=0; //VALORE MINIMO DA METTERE SU ASSE Y
+    let series = chart.series.push(new am4charts.LineSeries());
+    series.dataFields.valueY = "differenza";
+    series.dataFields.dateX = "giorno";
+    series.strokeWidth = 2;
+    series.minBulletDistance = 10;
+    series.tooltipText = "{valueY}";
+    series.tooltip.pointerOrientation = "vertical";
+    series.tooltip.background.cornerRadius = 10;
+    series.tooltip.background.fillOpacity = 0.5;
+    series.tooltip.label.padding(12, 12, 12, 12);
+    series.fill = am4core.color("#4e73df"); //CAMBIO COLORE SFONDO TOOLTIP VALORE
+    series.fillOpacity = 0.5; //METTO LO SFONDO DEI GRAFICI AREA OCCUPATA
+    series.stroke = am4core.color("#4e73df"); //CAMBIA COLORE LINEA
+    series.strokeWidth = 2.5; //SPESSORE LINEA
+    //PER LO ZOOM
+    chart.cursor = new am4charts.XYCursor();
+    chart.cursor.xAxis = dateAxis;
+    chart.cursor.snapToSeries = series;
+    chart.cursor.fill = am4core.color("#ff0000");
+
+  }
+
+  creaGraficoStoricoRapportoTamponiNazionale() {
+
+    am4core.useTheme(am4themes_animated);
+    let chart = am4core.create("graficoStoricoRapportoTamponiPositivi", am4charts.XYChart);
+    chart.language.locale = am4lang_it_It;
+    chart.data = this.graficoStoricoRapportoTamponiNazionale;
+
+    let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+    dateAxis.renderer.minGridDistance = 60; //DISTANZA ASSE X
+    dateAxis.stroke = am4core.color("#5a5c69");
+
+    let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.min=0; //VALORE MINIMO DA METTERE SU ASSE Y
+    valueAxis.max=100; //VALORE MASSIMO DA METTERE SU ASSE Y
+    
     let series = chart.series.push(new am4charts.LineSeries());
     series.dataFields.valueY = "differenza";
     series.dataFields.dateX = "giorno";

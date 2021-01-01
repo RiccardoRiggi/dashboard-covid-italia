@@ -49,6 +49,7 @@ export class StoricoProvincialeComponent implements OnInit {
     dateAxis.stroke = am4core.color("#5a5c69");
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.min=0; //VALORE MINIMO DA METTERE SU ASSE Y
     let series = chart.series.push(new am4charts.LineSeries());
     series.dataFields.valueY = "differenza";
     series.dataFields.dateX = "giorno";

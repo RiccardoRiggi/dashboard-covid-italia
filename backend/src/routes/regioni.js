@@ -291,6 +291,22 @@ router.get('/:codiceRegione/storico-tamponi', (req, res) => {
     });
 });
 
+router.get('/:codiceRegione/storico-rapporto-tamponi-positivi', (req, res) => {
+    let sql = 'SELECT sto.tamponi as valoreTotale, ROUND(nuovi_positivi * 100 / IFNULL(sto.tamponi-(SELECT sn.tamponi FROM storico_regioni sn WHERE codice_regione = '+req.params.codiceRegione+' AND sn.data = subdate(sto.data, 1)),0),1) as differenza, sto.data as giorno FROM storico_regioni sto WHERE codice_regione = '+req.params.codiceRegione+' ORDER BY sto.data';
+    let query = con.query(sql, (err, results) => {
+        try {
+            if (err) throw err;
+            res.setHeader('Content-Type', 'application/json');
+            res.status(200);
+            res.send(JSON.stringify({ "status": 200, "error": null, "isDaUsareDifferenza": true, "response": results }));
+        } catch (error) {
+            res.setHeader('Content-Type', 'application/json');
+            res.status(500);
+            res.send(JSON.stringify({ "status": 500, "error": error.sqlMessage, "response": "" }));
+        }
+    });
+});
+
 router.get('/:codiceRegione/storico-casi-testati', (req, res) => {
     let sql = 'SELECT sto.casi_testati as valoreTotale, IFNULL(sto.casi_testati-(SELECT sn.casi_testati FROM storico_regioni sn WHERE codice_regione = '+req.params.codiceRegione+' AND sn.data = subdate(sto.data, 1)),0) as differenza, sto.data as giorno FROM storico_regioni sto WHERE codice_regione = '+req.params.codiceRegione+' ORDER BY sto.data';
     let query = con.query(sql, (err, results) => {

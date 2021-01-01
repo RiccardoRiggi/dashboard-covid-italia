@@ -40,6 +40,7 @@ http://localhost:3000/nazione/storico-casi-da-sospetto-diagnostico <br>
 http://localhost:3000/nazione/storico-casi-da-screening <br>
 http://localhost:3000/nazione/storico-totale-casi <br>
 http://localhost:3000/nazione/storico-tamponi <br>
+http://localhost:3000/nazione/storico-rapporto-tamponi-positivi <br>
 http://localhost:3000/nazione/storico-casi-testati <br>
 http://localhost:3000/nazione/dettaglio/2020-09-16 <br>
 http://localhost:3000/nazione/dettaglioStorico <br>
@@ -60,6 +61,7 @@ http://localhost:3000/regioni/7/storico-casi-da-sospetto-diagnostico <br>
 http://localhost:3000/regioni/7/storico-casi-da-screening <br>
 http://localhost:3000/regioni/7/storico-totale-casi <br>
 http://localhost:3000/regioni/7/storico-tamponi <br>
+http://localhost:3000/regioni/7/storico-rapporto-tamponi-positivi <br>
 http://localhost:3000/regioni/7/storico-casi-testati <br>
 http://localhost:3000/regioni/7/dettaglio/2020-09-16 <br>
 http://localhost:3000/regioni/7/dettaglioStorico <br>
