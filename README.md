@@ -4,6 +4,9 @@ Dashboard Covid Italia è una Web Application realizzata in Javascript che conse
 
 ![Home](https://raw.githubusercontent.com/RiccardoRiggi/dashboard-covid-italia/master/screenshots/home.png)
 
+## Citazioni
+Il progetto è stato citato nell'ambito degli Open Data sul Covid-19 dall'[Università Degli Studi Di Padova](https://bibliotecadigitale.cab.unipd.it/solidarietadigitale/covid-19-open-data) e inserito all'interno della raccolta di API, dataset e dashboard sul Covid-19 di [mcicolella](https://github.com/mcicolella/covid19-opendata)
+
 ## Database
 Il progetto si appoggia ad un database [MySql]. Nella relativa cartella è possibile trovare la struttura e i dati relativi ad alcune tabelle.
 
