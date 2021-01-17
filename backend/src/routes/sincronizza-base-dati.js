@@ -33,7 +33,7 @@ router.get('/province', (req, res) => {
     } catch (error) {
         return res.send("Errore");
     }
-    
+
 });
 
 export default router;

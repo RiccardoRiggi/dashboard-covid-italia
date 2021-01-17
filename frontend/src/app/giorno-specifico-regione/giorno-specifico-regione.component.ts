@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -14,9 +15,9 @@ export class GiornoSpecificoRegioneComponent implements OnInit {
 
   constructor(httpDue: HttpClient, route: ActivatedRoute) {
     this.codiceRegione = route.snapshot.paramMap.get("codiceRegione");
-    let obsDue = httpDue.get('http://localhost:3000/regioni/'+this.codiceRegione+'/dettaglioStorico', { responseType: 'text' });
+    let obsDue = httpDue.get(environment.url_base+'regioni/'+this.codiceRegione+'/dettaglioStorico', { responseType: 'text' });
     obsDue.subscribe((ResponseDue) => this.mettiJSONDue((ResponseDue)));
-    obsDue = httpDue.get('http://localhost:3000/menu/elencoRegioni/'+this.codiceRegione, { responseType: 'text' });
+    obsDue = httpDue.get(environment.url_base+'menu/elencoRegioni/'+this.codiceRegione, { responseType: 'text' });
     obsDue.subscribe((Response) => this.mettiJSONTitolo(Response));
   }
 

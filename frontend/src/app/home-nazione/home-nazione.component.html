@@ -10,8 +10,9 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Contagiati</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ultimiValori.totale_positivi}}
-                                ({{ultimiValori.variazione_totale_positivi > 0 ? '+' : ''}}{{ultimiValori.variazione_totale_positivi}})
-                                </div>
+                                ({{ultimiValori.variazione_totale_positivi > 0 ? '+' :
+                                ''}}{{ultimiValori.variazione_totale_positivi}})
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-head-side-virus fa-2x text-gray-300"></i>
@@ -27,8 +28,9 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Deceduti</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ultimiValori.deceduti}}
-                                ({{ultimiValori.differenza_deceduti > 0 ? '+' : ''}}{{ultimiValori.differenza_deceduti}})
-                                </div>
+                                ({{ultimiValori.differenza_deceduti > 0 ? '+' :
+                                ''}}{{ultimiValori.differenza_deceduti}})
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-cross fa-2x text-gray-300"></i>
@@ -44,8 +46,9 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Guariti</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ultimiValori.dimessi_guariti}}
-                                ({{ultimiValori.differenza_dimessi_guariti > 0 ? '+' : ''}}{{ultimiValori.differenza_dimessi_guariti}})
-                                </div>
+                                ({{ultimiValori.differenza_dimessi_guariti > 0 ? '+' :
+                                ''}}{{ultimiValori.differenza_dimessi_guariti}})
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-virus-slash fa-2x text-gray-300"></i>
@@ -62,8 +65,9 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Totale</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ultimiValori.totale_casi}}
-                                ({{ultimiValori.differenza_totale_casi > 0 ? '+' : ''}}{{ultimiValori.differenza_totale_casi}})
-                                </div>
+                                ({{ultimiValori.differenza_totale_casi > 0 ? '+' :
+                                ''}}{{ultimiValori.differenza_totale_casi}})
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-viruses fa-2x text-gray-300"></i>
@@ -82,10 +86,12 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Terapia Intensiva</div>
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Terapia Intensiva
+                            </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ultimiValori.terapia_intensiva}}
-                                ({{ultimiValori.differenza_terapia_intensiva > 0 ? '+' : ''}}{{ultimiValori.differenza_terapia_intensiva}})
-                                </div>
+                                ({{ultimiValori.differenza_terapia_intensiva > 0 ? '+' :
+                                ''}}{{ultimiValori.differenza_terapia_intensiva}})
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-procedures fa-2x text-gray-300"></i>
@@ -100,10 +106,12 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Ricoverati con sintomi</div>
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Ricoverati con
+                                sintomi</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ultimiValori.ricoverati_con_sintomi}}
-                                ({{ultimiValori.differenza_ricoverati_con_sintomi > 0 ? '+' : ''}}{{ultimiValori.differenza_ricoverati_con_sintomi}})
-                                </div>
+                                ({{ultimiValori.differenza_ricoverati_con_sintomi > 0 ? '+' :
+                                ''}}{{ultimiValori.differenza_ricoverati_con_sintomi}})
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-head-side-cough fa-2x text-gray-300"></i>
@@ -118,10 +126,12 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Totale ospedalizzati</div>
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Totale ospedalizzati
+                            </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ultimiValori.totale_ospedalizzati}}
-                                ({{ultimiValori.differenza_totale_ospedalizzati > 0 ? '+' : ''}}{{ultimiValori.differenza_totale_ospedalizzati}})
-                                </div>
+                                ({{ultimiValori.differenza_totale_ospedalizzati > 0 ? '+' :
+                                ''}}{{ultimiValori.differenza_totale_ospedalizzati}})
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-hospital-user fa-2x text-gray-300"></i>
@@ -139,7 +149,7 @@
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tamponi</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ultimiValori.tamponi}}
                                 ({{ultimiValori.differenza_tamponi > 0 ? '+' : ''}}{{ultimiValori.differenza_tamponi}})
-                                </div>
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-microscope fa-2x text-gray-300"></i>

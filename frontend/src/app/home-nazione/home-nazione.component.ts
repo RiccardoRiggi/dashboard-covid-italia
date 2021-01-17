@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import * as am4core from "@amcharts/amcharts4/core";
@@ -17,17 +18,16 @@ export class HomeNazioneComponent implements OnInit {
   ultimaData: string;
 
   constructor(httpDue: HttpClient) { 
-    let obsDue = httpDue.get('http://localhost:3000/nazione/last/', { responseType: 'text' });
+    let obsDue = httpDue.get(environment.url_base+'nazione/last/', { responseType: 'text' });
     obsDue.subscribe((ResponseDue) => this.mettiJSONDue((ResponseDue)));
 
-    let obsTre = httpDue.get('http://localhost:3000/regioni/nuoviPositiviPerRegione', { responseType: 'text' });
+    let obsTre = httpDue.get(environment.url_base+'regioni/nuoviPositiviPerRegione', { responseType: 'text' });
     obsTre.subscribe((ResponseDue) => this.mettiJSONTre((ResponseDue)));
   }
 
   mettiJSONDue(a) {
     a = JSON.parse(a);
     this.ultimiValori = a.response[0];
-    //this.ultimaData = this.datepipe.transform(this.ultimiValori.data,'yyyy-MM-dd');
     this.ultimaData=this.ultimiValori.data;
   }
 

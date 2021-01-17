@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import * as am4core from "@amcharts/amcharts4/core";
@@ -18,13 +19,13 @@ export class HomeRegioneComponent implements OnInit {
   ultimaData: any;
 
   constructor(httpDue: HttpClient) { 
-    let obsTre = httpDue.get('http://localhost:3000/regioni/nuoviPositiviPerRegione', { responseType: 'text' });
+    let obsTre = httpDue.get(environment.url_base+'regioni/nuoviPositiviPerRegione', { responseType: 'text' });
     obsTre.subscribe((ResponseDue) => this.mettiJSONTre((ResponseDue)));
-    obsTre = httpDue.get('http://localhost:3000/regioni/totaleOspedalizzatiPerRegione', { responseType: 'text' });
+    obsTre = httpDue.get(environment.url_base+'regioni/totaleOspedalizzatiPerRegione', { responseType: 'text' });
     obsTre.subscribe((ResponseDue) => this.mettiJSONDue((ResponseDue)));
-    obsTre = httpDue.get('http://localhost:3000/regioni/totaleDecedutiPerRegione', { responseType: 'text' });
+    obsTre = httpDue.get(environment.url_base+'regioni/totaleDecedutiPerRegione', { responseType: 'text' });
     obsTre.subscribe((ResponseDue) => this.mettiJSONUno((ResponseDue)));
-    obsTre = httpDue.get('http://localhost:3000/regioni/7/last', { responseType: 'text' });
+    obsTre = httpDue.get(environment.url_base+'regioni/7/last', { responseType: 'text' });
     obsTre.subscribe((ResponseDue) => this.mettiJSONQuattro((ResponseDue)));
   }
 

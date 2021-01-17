@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import * as am4core from "@amcharts/amcharts4/core";
@@ -15,16 +16,16 @@ export class HomeProvinciaComponent implements OnInit {
   ultimaData: any;
 
   constructor(http: HttpClient) {
-    let obsTre = http.get('http://localhost:3000/province/storico-totale-casi', { responseType: 'text' });
+    let obsTre = http.get(environment.url_base+'province/storico-totale-casi', { responseType: 'text' });
     obsTre.subscribe((ResponseDue) => this.mettiJSONTre((ResponseDue)));
-    obsTre = http.get('http://localhost:3000/province/7/10/last', { responseType: 'text' });
+    obsTre = http.get(environment.url_base+'province/7/10/last', { responseType: 'text' });
     obsTre.subscribe((ResponseDue) => this.mettiJSONQuattro((ResponseDue)));
   }
 
   mettiJSONQuattro(a) {
     a = JSON.parse(a);
     this.ultimiValori = a.response[0];
-    this.ultimaData=this.ultimiValori.data;
+    this.ultimaData = this.ultimiValori.data;
   }
 
   mettiJSONTre(a) {

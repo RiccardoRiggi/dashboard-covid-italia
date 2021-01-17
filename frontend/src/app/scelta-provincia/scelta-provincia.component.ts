@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -14,7 +15,7 @@ export class SceltaProvinciaComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient) {
     this.tipoScelta = this.route.snapshot.paramMap.get("tipoScelta");
     console.log(this.tipoScelta);
-    let obs = http.get('http://localhost:3000/menu/elencoProvince', { responseType: 'text' });
+    let obs = http.get(environment.url_base+'menu/elencoProvince', { responseType: 'text' });
     obs.subscribe((Response) => this.mettiJSON(Response));
   }
 

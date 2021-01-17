@@ -1,13 +1,6 @@
+import con from '../db';
+
 var api = require('./api-protezione-civile');
-
-var mysql = require('mysql');
-
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "dashboard-covid-italia"
-});
 
 module.exports = {
   sincronizzaDatiNazionali: async function () {
@@ -31,7 +24,7 @@ module.exports = {
         var sql = "INSERT INTO `storico_nazionale` (`data`, `stato`, `ricoverati_con_sintomi`, `terapia_intensiva`,`totale_ospedalizzati`,`isolamento_domiciliare`,`totale_positivi`,`variazione_totale_positivi`,`nuovi_positivi`,`dimessi_guariti`,`deceduti`,`casi_da_sospetto_diagnostico`,`casi_da_screening`,`totale_casi`,`tamponi`,`casi_testati` , `note`,`ingressi_terapia_intensiva`,`note_test`,`note_casi`) VALUES ( \"" + tmp.data + "\" , \"" + tmp.stato + "\" ," + tmp.ricoverati_con_sintomi + " ," + tmp.terapia_intensiva + " ," + tmp.totale_ospedalizzati + " ," + tmp.isolamento_domiciliare + " ," + tmp.totale_positivi + " ," + tmp.variazione_totale_positivi + " ," + tmp.nuovi_positivi + " ," + tmp.dimessi_guariti + " ," + tmp.deceduti + " ," + tmp.casi_da_sospetto_diagnostico + " ," + tmp.casi_da_screening + " ," + tmp.totale_casi + " ," + tmp.tamponi + " ," + tmp.casi_testati + ",\"" + tmp.note + "\",\"" + tmp.ingressi_terapia_intensiva + "\",\"" + tmp.note_test + "\",\"" + tmp.note_casi + "\" ) ";
         con.query(sql, function (err, result) {
           if (!err)
-          contatore++;
+            contatore++;
           console.log("Record inseriti: " + contatore + " - Tentativi: " + c);
         });
       } catch (error) {
@@ -90,7 +83,7 @@ module.exports = {
         var sql = "INSERT INTO `storico_province` (`data`, `stato`, `codice_regione`, `denominazione_regione`, `codice_provincia`, `denominazione_provincia`, `sigla_provincia`, `lat`, `long`, `totale_casi`, `note`) VALUES ( \"" + tmp.data + "\" , \"" + tmp.stato + "\" , " + tmp.codice_regione + " ,\"" + tmp.denominazione_regione + "\" ," + tmp.codice_provincia + " ,\"" + tmp.denominazione_provincia + "\" ,\"" + tmp.sigla_provincia + "\" ," + tmp.lat + " ," + tmp.long + " ," + tmp.totale_casi + " ,\"" + tmp.note + "\" ) ";
         con.query(sql, function (err, result) {
           if (!err)
-          contatore++;
+            contatore++;
           console.log("Record inseriti: " + contatore + " - Tentativi: " + c);
         });
       } catch (error) {

@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -14,11 +15,11 @@ export class SceltaRegioneComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient) {
     this.tipoScelta = this.route.snapshot.paramMap.get("tipoScelta");
     console.log(this.tipoScelta);
-    let obs = http.get('http://localhost:3000/menu/elencoRegioni', { responseType: 'text' });
+    let obs = http.get(environment.url_base+'menu/elencoRegioni', { responseType: 'text' });
     obs.subscribe((Response) => this.mettiJSON(Response));
-   }
+  }
 
-   mettiJSON(a) {
+  mettiJSON(a) {
     a = JSON.parse(a);
     this.elencoRegioni = a.response;
     console.log(this.elencoRegioni[0].denominazione_regione);

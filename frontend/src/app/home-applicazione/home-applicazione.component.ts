@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import * as am4core from "@amcharts/amcharts4/core";
@@ -22,13 +23,13 @@ export class HomeApplicazioneComponent {
 
   constructor(http: HttpClient, private httpDue: HttpClient) {
 
-    let obsTre = this.httpDue.get('http://localhost:3000/regioni/nuoviPositiviPerRegione', { responseType: 'text' });
+    let obsTre = this.httpDue.get(environment.url_base+'regioni/nuoviPositiviPerRegione', { responseType: 'text' });
     obsTre.subscribe((ResponseDue) => this.mettiJSONTre((ResponseDue)));
 
-    let obsDue = this.httpDue.get('http://localhost:3000/nazione/last/', { responseType: 'text' });
+    let obsDue = this.httpDue.get(environment.url_base+'nazione/last/', { responseType: 'text' });
     obsDue.subscribe((ResponseDue) => this.mettiJSONDue((ResponseDue)));
 
-    let obs = http.get('http://localhost:3000/nazione/storico-nuovi-positivi', { responseType: 'text' });
+    let obs = http.get(environment.url_base+'nazione/storico-nuovi-positivi', { responseType: 'text' });
     obs.subscribe((Response) => this.mettiJSON((Response)));
 
   }
@@ -42,7 +43,7 @@ export class HomeApplicazioneComponent {
   mettiJSONDue(a) {
     a = JSON.parse(a);
     this.ultimiValori = a.response[0];
-    this.ultimaData=this.ultimiValori.data;
+    this.ultimaData = this.ultimiValori.data;
     this.creaGraficoDifferenzaTamponiNegativiTamponiPositivi();
 
   }

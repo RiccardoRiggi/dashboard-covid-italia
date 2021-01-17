@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
@@ -21,9 +22,9 @@ export class StoricoProvincialeComponent implements OnInit {
   constructor(http: HttpClient,private route: ActivatedRoute) { 
     this.codiceRegione = this.route.snapshot.paramMap.get("codiceRegione");
     this.codiceProvincia = this.route.snapshot.paramMap.get("codiceProvincia");
-    let obs = http.get('http://localhost:3000/province/'+this.codiceRegione+'/'+this.codiceProvincia+'/storico-totale-casi', { responseType: 'text' });
+    let obs = http.get(environment.url_base+'province/'+this.codiceRegione+'/'+this.codiceProvincia+'/storico-totale-casi', { responseType: 'text' });
     obs.subscribe((Response) => this.mettiJSON(Response));
-    obs = http.get('http://localhost:3000/menu/elencoProvince/'+this.codiceRegione+'/'+this.codiceProvincia, { responseType: 'text' });
+    obs = http.get(environment.url_base+'menu/elencoProvince/'+this.codiceRegione+'/'+this.codiceProvincia, { responseType: 'text' });
     obs.subscribe((Response) => this.mettiJSONTitolo(Response));
   }
 

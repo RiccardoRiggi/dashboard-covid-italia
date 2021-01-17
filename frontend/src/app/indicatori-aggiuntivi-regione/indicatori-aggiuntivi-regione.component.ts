@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -19,9 +20,9 @@ export class IndicatoriAggiuntiviRegioneComponent implements OnInit {
 
   constructor(http: HttpClient,private route: ActivatedRoute) { 
     this.codiceRegione = this.route.snapshot.paramMap.get("codiceRegione");
-    let obs = http.get('http://localhost:3000/regioni/'+this.codiceRegione+'/last/', { responseType: 'text' });
+    let obs = http.get(environment.url_base+'regioni/'+this.codiceRegione+'/last/', { responseType: 'text' });
     obs.subscribe((Response) => this.mettiJSONDue(Response));
-    obs = http.get('http://localhost:3000/menu/elencoRegioni/'+this.codiceRegione, { responseType: 'text' });
+    obs = http.get(environment.url_base+'menu/elencoRegioni/'+this.codiceRegione, { responseType: 'text' });
     obs.subscribe((Response) => this.mettiJSONTre(Response));
   }
 

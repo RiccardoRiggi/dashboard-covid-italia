@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -10,18 +11,18 @@ import { Component, OnInit } from '@angular/core';
 export class GiornoSpecificoNazioneComponent implements OnInit {
   tabellaNazionale: any;
 
-  constructor(httpDue: HttpClient) {
-    let obsDue = httpDue.get('http://localhost:3000/nazione/dettaglioStorico', { responseType: 'text' });
-    obsDue.subscribe((ResponseDue) => this.mettiJSONDue((ResponseDue)));
-   }
+  constructor(http: HttpClient) {
+    let obs = http.get(environment.url_base + 'nazione/dettaglioStorico', { responseType: 'text' });
+    obs.subscribe((Response) => this.estraiJSON((Response)));
+  }
 
-   mettiJSONDue(a) {
+  estraiJSON(a) {
     a = JSON.parse(a);
     this.tabellaNazionale = a.response;
   }
 
   ngOnInit(): void {
-    
+
   }
 
 
